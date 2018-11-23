@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+<head>
+<meta charset="UTF-8" />
+<title>Management Console</title>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+	integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+	crossorigin="anonymous"></script>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+	integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+	crossorigin="anonymous" />
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+	crossorigin="anonymous"></script>
+<script src="js/md5.js"></script>
+</head>
+<body>
+	<h2>Welcome to Management System</h2>
+	<div class="container-fluid col-md-6">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<h3 class="panel-title">Login</h3>
+			</div>
+			<div class="panel-body">
+				<h:form id="form">
+					<div class="form-group">
+						<label for="exampleInputEmail1">Email address</label>
+						<h:inputText id="email" styleClass="form-control" required="true"
+							requiredMessage="Please enter the email"
+							value="#{loginBean.email}"></h:inputText>
+						<h:message for="email" errorClass="err" warnClass="warn"
+							infoClass="info"></h:message>
+					</div>
+					<div class="form-group">
+						<label for="exampleInputPassword1">Password</label>
+						<h:inputSecret id="password" styleClass="form-control"
+							required="true" requiredMessage="Please enter the password"
+							value="#{loginBean.password}"></h:inputSecret>
+						<h:message for="password" errorClass="err" warnClass="warn"
+							infoClass="info"></h:message>
+					</div>
+					<h:commandButton styleClass="btn btn-default"
+						action="#{loginBean.login}" value="Login">
+					</h:commandButton>
+					<h:outputText id="msgId"></h:outputText>
+					<h:message for="msgId" errorClass="err" warnClass="warn"
+						infoClass="info"></h:message>
+				</h:form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
